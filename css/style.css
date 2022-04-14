@@ -1,0 +1,89 @@
+@import url("./personalizacao.css");
+
+body, h1, h2, h3, h4, label, input {
+  margin: 0;
+}
+body {
+  font: 500 1rem 'Nunito', sans-serif;
+}
+.header {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.header h1 {
+  margin-bottom: 10px;
+  font: 400 3rem 'Fraunces', serif; 
+}
+.header h2 {
+  font: 600 1.4rem 'Fraunces', serif;
+  font-style: italic;
+}
+.galeria {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.btn {
+  background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+  border: none;
+  padding: 10px 20px;
+  font: 400 1rem 'Nunito', sans-serif;
+  color: #222;
+  margin: 0 auto;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+.set-fotos,
+.get-fotos {
+  display: none;
+}
+.set-fotos.active,
+.get-fotos.active {
+  display: block;
+}
+
+.escreve-texto {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.texto {
+  grid-column: 1/-1;
+}
+.escreve-texto input,
+.escreve-texto textarea {
+  padding: 20px;
+  border:  1px solid #ccc;
+}
+.estilo-texto {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.estilo-texto form {
+  margin-bottom: 10px;
+}
+.grid-estilo {
+  display: grid;
+  grid-template-columns: 50px 100px min-content 100px;
+  align-items: center;
+  gap: 10px;
+}
+.estilo-texto h3 {
+  font: 600 1.125rem 'Nunito', sans-serif;
+}
+.estilo-texto select,
+.estilo-texto input {
+  border:  1px solid #ccc;
+  padding: 5px;
+}
+.download button {
+  display: block;
+}
+.copy {
+  text-align: center;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diarinho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;1,100&family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <h1>diarinho</h1>
+      <h2>um diário bonitinho</h2>
+    </div>
+  </header>
+  <section class="galeria">
+    <div>
+      <button class="get-fotos btn active">selecione suas fotos</button>
+    </div>
+    <div>
+      <button class="set-fotos btn">organize suas fotos</button>
+    </div>
+  </section>
+  <section class="corpo-texto">
+    <div>
+      <form class="escreve-texto">
+        <input type="text" name="titulo" id="titulo" class="titulo" placeholder="seu título vai aqui">
+        <input type="date" class="data" name="data" id="data">
+        <textarea name="texto" id="texto" cols="30" rows="10" class="texto" placeholder="seu texto"></textarea>
+      </form>
+    </div>
+    <div class="estilo-texto">
+      <form class="grid-estilo">
+        <h3>título</h3>
+        <select name="fontFamily" id="fontFamily">
+          <option value="Arial">Arial</option>
+          <option value="Georgia">Georgia</option>
+          <option value="monospace">Monospace</option>
+        </select>
+        <input type="color" name="color" id="color">
+        <input type="number" name="tamanho" id="tamanho" placeholder="tamanho">
+      </form>
+      <form class="grid-estilo">
+        <h3>texto</h3>
+        <select name="fontFamily" id="fontFamily">
+          <option value="Arial">Arial</option>
+          <option value="Georgia">Georgia</option>
+          <option value="monospace">Monospace</option>
+        </select>
+        <input type="color" name="color" id="color">
+        <input type="number" placeholder="tamanho" name="tamanho" id="tamanho">
+      </form>
+    </div>
+  </section>
+  <section class="download">
+    <button class="btn">download</button>
+  </section>
+  <footer>
+    <div class="copy">
+      feito com &#10084; por brunaperas
+    </div>
+  </footer>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
