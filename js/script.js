@@ -1,9 +1,47 @@
-const getFotos = document.querySelector('.get-fotos');
-const setFotos = document.querySelector('.set-fotos');
+class editaTexto {
+  constructor() {
+    this.caixaTitulo = document.querySelector('.titulo');
+    this.caixaTexto = document.querySelector('.texto');
+    this.caixaData = document.querySelector('.data');
+    
+    this.escreveTexto = document.querySelector('.escreve-texto');
+    this.personaliza = document.querySelector('.personaliza');
+    this.estiloTexto = document.querySelector('.estilo-texto'); 
+    
+    this.textoFinal = document.createElement('div');
 
-function activeClass() {
-  getFotos.classList.toggle('active');
-  setFotos.classList.toggle('active');
+    this.corpoTexto = this.corpoTexto.bind(this);
+  }
+
+  corpoTexto() {
+    this.titulo = this.caixaTitulo.value;
+    this.texto = this.caixaTexto.value;
+    this.data = this.caixaData.value;
+    if (this.titulo && this.texto && this.data) {
+      this.textoFinal.innerHTML = this.titulo + ' ' + this.data + '</br>' + this.texto;  
+      this.personaliza.append(this.textoFinal);
+    }
+  }
+  insereTexto() {
+    this.escreveTexto.addEventListener('change', this.corpoTexto)
+  }
+
+  init() {
+    this.insereTexto();    
+    return this;
+  }
 }
-getFotos.addEventListener('click', activeClass);
-setFotos.addEventListener('click', activeClass);
+
+const Edita = new editaTexto();
+Edita.init();
+
+
+
+
+
+
+
+
+
+
+
