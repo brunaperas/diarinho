@@ -5,6 +5,7 @@ body, h1, h2, h3, h4, label, input {
 }
 body {
   font: 500 1rem 'Nunito', sans-serif;
+  background: #d0dbd7;
 }
 .header {
   margin-top: 40px;
@@ -14,19 +15,27 @@ body {
 .header h1 {
   margin-bottom: 10px;
   font: 400 3rem 'Fraunces', serif; 
+  color: #9c8059;
+  font-weight: bold;
 }
 .header h2 {
   font: 600 1.4rem 'Fraunces', serif;
   font-style: italic;
+  color: #3d2606;
 }
 .btn {
-  background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+  background: #C69E4B;
   border: none;
   padding: 10px 20px;
   font: 400 1rem 'Nunito', sans-serif;
-  color: #222;
+  color: #542e0d;
   cursor: pointer;
   display: block;
+  border: 2px solid;
+  font-weight: bold;
+}
+.btn:hover {
+  background: #e8dbc1;
 }
 .escreve-texto {
   max-width: 800px;
@@ -42,7 +51,12 @@ body {
 .escreve-texto input,
 .escreve-texto textarea {
   padding: 20px;
-  border:  1px solid #ccc;
+  border:  3px solid #fff;
+  background: #b5c7c0;
+  box-shadow: 8px 8px #fff;
+  color: #020807;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
 }
 .personaliza {
   max-width: 800px;
@@ -57,7 +71,7 @@ body {
 
 .grid-estilo {
   display: grid;
-  grid-template-columns: 50px 150px min-content 100px;
+  grid-template-columns: 50px 150px min-content 110px;
   align-items: center;
   gap: 10px;
 }
@@ -66,8 +80,15 @@ body {
 }
 .estilo-texto select,
 .estilo-texto input {
-  border:  1px solid #ccc;
+  border:  2px solid #fff;
   padding: 5px;
+  background: #75968a;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+}
+.estilo-texto input::placeholder {
+  color: #fff;
 }
 .download button {
   margin: 0 auto;
