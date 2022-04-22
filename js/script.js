@@ -125,7 +125,7 @@ function doUpload(url, options) {
   };
 
   function addImage(url) {
-    galeria.innerHTML += `<img src="${url}" width ="300" />`; 
+    galeria.innerHTML += `<img src="${url}" width ="200" />`; 
   }
 
   function onSuccess(result) {
