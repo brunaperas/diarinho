@@ -5,7 +5,7 @@ class editaTexto {
     this.caixaData = document.querySelector('.data');
     
     this.escreveTexto = document.querySelector('.escreve-texto');
-    this.personaliza = document.querySelector('.personaliza');
+    this.galeria = document.querySelector('#galeria');
     this.estiloTexto = document.querySelector('.estilo-texto'); 
     
     this.tituloFinal = document.createElement ('h1');
@@ -33,7 +33,7 @@ class editaTexto {
       this.textoFinal.innerText = this.texto;
       this.dataFinal.innerHTML = this.data;
 
-      this.personaliza.append(this.corpoFinal);
+      this.galeria.append(this.corpoFinal);
       this.corpoFinal.appendChild(this.tituloFinal);
       this.corpoFinal.appendChild(this.dataFinal);
       this.corpoFinal.appendChild(this.textoFinal);
@@ -57,7 +57,7 @@ class editaTexto {
     this.textoFinal.innerText = localStorage.getItem('texto', this.texto);
     this.dataFinal.innerHTML = localStorage.getItem('data', this.data);
 
-    this.personaliza.append(this.corpoFinal);
+    this.galeria.append(this.corpoFinal);
     this.corpoFinal.appendChild(this.tituloFinal);
     this.corpoFinal.appendChild(this.dataFinal);
     this.corpoFinal.appendChild(this.textoFinal);
@@ -105,6 +105,54 @@ class editaTexto {
 
 const Edita = new editaTexto();
 Edita.init();
+
+// fotos
+const CLIENT_ID = '39bc75817755ef6';
+const galeria = document.getElementById('galeria');
+const getFotos = document.getElementById('get-fotos');
+
+function doUpload(url, options) {
+    function promisseCallback(resolve, reject) {
+      function getFetchJson(response) {
+        if(!response.ok) return reject(response);
+        return response.json().then(resolve);
+      }
+      fetch(url, options)
+      .then(getFetchJson)
+      .catch(reject);
+    };
+    return new Promise(promisseCallback);
+  };
+
+  function addImage(url) {
+    galeria.innerHTML += `<img src="${url}" width ="300" />`; 
+  }
+
+  function onSuccess(result) {
+    const { data: { link } } = result;
+    addImage(link);
+  };
+
+  function uploadImage(event) {
+    event.preventDefault();
+
+    const file = document.getElementById('file');
+    const data = new FormData();
+    data.append('image', file.files[0]);
+
+    doUpload('https://api.imgur.com/3/image', {
+      method: 'POST',
+      body: data, 
+      headers: {
+        'Authorization': `Client-ID ${CLIENT_ID}`,
+      }
+    })
+    .then(onSuccess)
+    .then(console.error);
+  }
+
+  getFotos.addEventListener('submit', uploadImage);
+  
 
 
 
