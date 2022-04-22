@@ -23,7 +23,8 @@ body {
   font-style: italic;
   color: #3d2606;
 }
-.btn {
+.btn, 
+.btn-selecionar {
   background: #C69E4B;
   border: none;
   padding: 10px 20px;
@@ -34,8 +35,18 @@ body {
   border: 2px solid;
   font-weight: bold;
 }
-.btn:hover {
+.btn-selecionar {
+  background: #c79da7;
+  color: #521725;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.btn:hover,
+.btn-selecionar:hover {
   background: #e8dbc1;
+}
+.btn-selecionar:hover {
+  background: #dec3c9;
 }
 .escreve-texto {
   max-width: 800px;
@@ -58,7 +69,8 @@ body {
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
 }
-.personaliza {
+.personaliza, 
+.estilo-geral {
   max-width: 800px;
   margin: 0 auto;
   display: grid;
@@ -89,6 +101,17 @@ body {
 }
 .estilo-texto input::placeholder {
   color: #fff;
+}
+input[type="file"] {
+  display: none;
+}
+
+#galeria {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
 }
 .download button {
   margin: 0 auto;
