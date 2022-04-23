@@ -5,7 +5,7 @@ class editaTexto {
     this.caixaData = document.querySelector('.data');
     
     this.escreveTexto = document.querySelector('.escreve-texto');
-    this.galeria = document.querySelector('#galeria');
+    this.finalTexto = document.querySelector('.final-texto');
     this.estiloTexto = document.querySelector('.estilo-texto'); 
     
     this.tituloFinal = document.createElement ('h1');
@@ -33,7 +33,7 @@ class editaTexto {
       this.textoFinal.innerText = this.texto;
       this.dataFinal.innerHTML = this.data;
 
-      this.galeria.append(this.corpoFinal);
+      this.finalTexto.append(this.corpoFinal);
       this.corpoFinal.appendChild(this.tituloFinal);
       this.corpoFinal.appendChild(this.dataFinal);
       this.corpoFinal.appendChild(this.textoFinal);
@@ -57,7 +57,7 @@ class editaTexto {
     this.textoFinal.innerText = localStorage.getItem('texto', this.texto);
     this.dataFinal.innerHTML = localStorage.getItem('data', this.data);
 
-    this.galeria.append(this.corpoFinal);
+    this.finalTexto.append(this.corpoFinal);
     this.corpoFinal.appendChild(this.tituloFinal);
     this.corpoFinal.appendChild(this.dataFinal);
     this.corpoFinal.appendChild(this.textoFinal);
@@ -65,20 +65,20 @@ class editaTexto {
 
  changeEstilo() {
    this.fonteTitulo = this.caixaFonteTitulo.value;
-  this.corTitulo = this.caixaCorTitulo.value;
-  this.tamanhoTitulo = this.caixaTamanhoTitulo.value;
+    this.corTitulo = this.caixaCorTitulo.value;
+    this.tamanhoTitulo = this.caixaTamanhoTitulo.value;
 
-  this.fonteTexto = this.caixaFonteTexto.value;
-  this.corTexto = this.caixaCorTexto.value;
-  this.tamanhoTexto = this.caixaTamanhoTexto.value;
+    this.fonteTexto = this.caixaFonteTexto.value;
+    this.corTexto = this.caixaCorTexto.value;
+    this.tamanhoTexto = this.caixaTamanhoTexto.value;
 
-  this.tituloFinal.style.fontFamily = this.fonteTitulo;
-  this.tituloFinal.style.color = this.corTitulo;
-  this.tituloFinal.style.fontSize = this.tamanhoTitulo + 'px';
+    this.tituloFinal.style.fontFamily = this.fonteTitulo;
+    this.tituloFinal.style.color = this.corTitulo;
+    this.tituloFinal.style.fontSize = this.tamanhoTitulo + 'px';
 
-  this.textoFinal.style.fontFamily = this.fonteTexto;
-  this.textoFinal.style.color = this.corTexto;
-  this.textoFinal.style.fontSize = this.tamanhoTexto + 'px';
+    this.textoFinal.style.fontFamily = this.fonteTexto;
+    this.textoFinal.style.color = this.corTexto;
+    this.textoFinal.style.fontSize = this.tamanhoTexto + 'px';
   } 
 
   estiloFontes() {
@@ -116,16 +116,17 @@ function doUpload(url, options) {
       function getFetchJson(response) {
         if(!response.ok) return reject(response);
         return response.json().then(resolve);
-      }
+      }  
       fetch(url, options)
       .then(getFetchJson)
       .catch(reject);
     };
     return new Promise(promisseCallback);
-  };
+};
 
   function addImage(url) {
-    galeria.innerHTML += `<img src="${url}" width ="200" />`; 
+    galeria.innerHTML += 
+    `<li class="lista-fotos"><img src="${url}" width ="240" /></li>`; 
   }
 
   function onSuccess(result) {
@@ -153,6 +154,21 @@ function doUpload(url, options) {
 
   getFotos.addEventListener('submit', uploadImage);
   
+// slide fotos
+
+// download 
+
+// const telaPrint = document.getElementById('print').innerHTML;
+// const downloadButton = document.querySelector('.download');
+
+// downloadButton.addEventListener('click', downloadItem);
+
+// function downloadItem() {
+//  const telaConteudo = window.open('about:blank');
+// telaConteudo.document.write(telaPrint);
+// telaConteudo.window.print();
+// telaConteudo.window.close();
+// };
 
 
 

@@ -1,7 +1,8 @@
-@import url("./personalizacao.css");
-
-body, h1, h2, h3, h4, label, input {
+body, h1, h2, h3, h4, label, input, ul, li {
   margin: 0;
+}
+ul, li {
+  list-style: none;
 }
 body {
   font: 500 1rem 'Nunito', sans-serif;
@@ -40,6 +41,7 @@ body {
   color: #521725;
   text-align: center;
   margin-bottom: 10px;
+  width: 84px;
 }
 .btn:hover,
 .btn-selecionar:hover {
@@ -109,14 +111,17 @@ input[type="file"] {
 #galeria {
   max-width: 800px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 15px;
+  margin-bottom: 40px;  
 }
-.download button {
+/* .download {
   margin: 0 auto;
   margin-bottom: 40px;
-}
+} */
 .copy {
   text-align: center;
   margin-bottom: 20px;
@@ -136,6 +141,37 @@ input[type="file"] {
 .texto-geral {
   grid-column: 1/-1;
 }
-.data-geral {
 
+@media (max-width: 800px) {
+  .escreve-texto,
+  .personaliza, 
+ .estilo-geral,
+ #galeria {
+    max-width: 500px;
+  }
+
+  #galeria {
+    gap: 10px;
+  }
+  .personaliza {
+    grid-template-columns: 1fr;
+  }
+  .btn-selecionar {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .escreve-texto,
+  .personaliza, 
+ .estilo-geral,
+ #galeria {
+    max-width: 350px;
+  }
+  .escreve-texto {
+    grid-template-columns: 1fr;
+  }
+  .grid-estilo {
+    grid-template-columns: 40px 120px min-content 90px;
+  }
 }
